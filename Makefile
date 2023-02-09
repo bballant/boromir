@@ -9,7 +9,7 @@ CFLAGS = -g -Wall
 default: $(TARGET)
 all: default
 
-OBJECTS = src/main.o src/tcp.o src/ds.o
+OBJECTS = src/main.o src/tcp.o src/ds.o src/list.o src/hlist.o
 
 .PRECIOUS: $(TARGET) $(OBJECTS)
 

@@ -3,6 +3,7 @@
 
 #include "tcp.h"
 #include "ds.h"
+#include "hlist.h"
 #include "modriclib.h"
 
 static void usage(const char *prog) {
@@ -16,18 +17,6 @@ static void usage(const char *prog) {
   exit(EXIT_FAILURE);
 }
 
-/*
-** ./bin/modric # no params, runs json_demo()
-** ./bin/modric -alvarez # run testing code
-** ./bin/modric -e2j file.edn  # convert edn to json and pprint
-** ./bin/modric -ppj file.json # pprint json
-**
-**  # rocksdb playin'
-**    # insert doc
-**  ./bin/modric -db path-to-db -key string-key-for-json -json path-to-json-file
-**    # print doc
-**  ./bin/modric -db path-to-db -key string-key-for-json
-* */
 int main(int argc, char *argv[]) {
 
   // Parse command-line flags
@@ -39,7 +28,7 @@ int main(int argc, char *argv[]) {
       tcp_run_server();
       break;
     } else if (strcmp(argv[i], "-test") == 0) {
-      ds_test();
+      h_test();
       break;
     } else {
       usage(argv[0]);
