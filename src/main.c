@@ -4,6 +4,7 @@
 #include "tcp.h"
 #include "ds.h"
 #include "hlist.h"
+#include "test.h"
 #include "modriclib.h"
 
 static void usage(const char *prog) {
@@ -18,7 +19,6 @@ static void usage(const char *prog) {
 }
 
 int main(int argc, char *argv[]) {
-
   // Parse command-line flags
   for (int i = 1; i < argc; i++) {
     if (strcmp(argv[i], "-client") == 0) {
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
       tcp_run_server();
       break;
     } else if (strcmp(argv[i], "-test") == 0) {
-      h_test();
+      g_test(argc, argv);
       break;
     } else {
       usage(argv[0]);

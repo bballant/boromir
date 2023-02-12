@@ -1,23 +1,25 @@
 TARGET = bin/boromir
 
 LIBS = -lm
+GLIBL = $(shell pkg-config --libs glib-2.0)
 CC = gcc
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall 
+GLIBC = $(shell pkg-config --cflags glib-2.0)
 
 .PHONY: default all clean
 
 default: $(TARGET)
 all: default
 
-OBJECTS = src/main.o src/tcp.o src/ds.o src/list.o src/hlist.o
+OBJECTS = src/main.o src/tcp.o src/ds.o src/llist.o src/hlist.o src/test.o src/bst.o
 
 .PRECIOUS: $(TARGET) $(OBJECTS)
 
 %.o: %.c %.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(GLIBC) -c $< -o $@
 
 $(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -Wall $(LIBS) -o $@
+	$(CC) $(OBJECTS) -Wall $(LIBS) $(GLIBL) -o $@
 
 clean:
 	-rm -f $(OBJECTS)

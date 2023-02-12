@@ -1,4 +1,5 @@
 #include "ds.h"
+#include "llist.h"
 
 #include <assert.h>
 #include <stdbool.h>
@@ -302,4 +303,41 @@ void test_hash_table(void) {
   ht_destroy(counts);
 }
 
-void ds_test(void) { test_hash_table(); }
+typedef llist Stack;
+
+#define stack_init llist_init
+
+#define stack_destroy llist_destroy
+
+void stack_push(Stack *s, void *data) {
+  lval *e = malloc(sizeof(lval));
+  *e = (lval){.data = data, .next = s->head};
+  s->head = e;
+}
+
+void stack_pop(Stack *s, void **data) {
+  lval *h = s->head;
+  *data = h->data;
+  s->head = h->next;
+  free(h);
+}
+
+void *stack_peek(Stack *s) {
+  lval *h = s->head;
+  return h->data;
+}
+
+void test_stack(void) {
+  Stack *stack = malloc(sizeof(Stack));
+  stack_init(stack, free);
+  stack_push(stack, "Foo");
+  stack_push(stack, "Bar");
+  stack_push(stack, "Baz");
+  printf("%s\n", (char *)stack_peek(stack));
+  void **data = malloc(sizeof(void*));
+  stack_pop(stack, data);
+  printf("%s\n", (char *)(*data));
+  printf("%s\n", (char *)stack_peek(stack));
+}
+
+void ds_test(void) { test_stack(); }
