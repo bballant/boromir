@@ -11,7 +11,7 @@ GLIBC = $(shell pkg-config --cflags glib-2.0)
 default: $(TARGET)
 all: default
 
-OBJECTS = src/main.o src/tcp.o src/ds.o src/llist.o src/hlist.o src/test.o src/bst.o
+OBJECTS = src/main.o src/tcp.o src/ds.o src/llist.o src/hlist.o src/test.o src/bstree.o
 
 .PRECIOUS: $(TARGET) $(OBJECTS)
 
@@ -34,5 +34,5 @@ run-client: clean $(TARGET)
 run-server: clean $(TARGET)
 	./$(TARGET) -server
 
-run-test: clean $(TARGET)
+test: clean $(TARGET)
 	./$(TARGET) -test

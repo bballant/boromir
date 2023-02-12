@@ -3,7 +3,7 @@
 
 #include "test.h"
 
-#include "bst.h"
+#include "bstree.h"
 #include "llist.h"
 
 
