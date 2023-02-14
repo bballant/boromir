@@ -27,9 +27,9 @@ void llist_destroy(llist *list) {
   return;
 }
 
-int llist_ins_next(llist *list, lval *element, const void *data) {
-  lval *new_element;
-  if ((new_element = (lval *)malloc(sizeof(lval))) == NULL)
+int llist_ins_next(llist *list, llval *element, const void *data) {
+  llval *new_element;
+  if ((new_element = (llval *)malloc(sizeof(llval))) == NULL)
     return -1;
   new_element->data = (void *)data;
   if (element == NULL) {
@@ -48,8 +48,8 @@ int llist_ins_next(llist *list, lval *element, const void *data) {
   return 0;
 }
 
-int llist_rem_next(llist *list, lval *element, void **data) {
-  lval *old_element;
+int llist_rem_next(llist *list, llval *element, void **data) {
+  llval *old_element;
   if (list->size == 0)
     return -1;
   if (element == NULL) {

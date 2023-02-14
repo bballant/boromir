@@ -1,11 +1,12 @@
 #include "ds.h"
-#include "llist.h"
 
 #include <assert.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "llist.h"
 
 typedef struct {
   char *key;
@@ -41,7 +42,7 @@ int cmp(const void *a, const void *b) {
 
 item *binary_search(item *items, size_t size, const char *key) {
   if (size + size < size) {
-    return NULL; // size too big; avoid overflow
+    return NULL;  // size too big; avoid overflow
   }
   size_t low = 0;
   size_t high = size;
@@ -52,9 +53,9 @@ item *binary_search(item *items, size_t size, const char *key) {
       return &items[mid];
     }
     if (c < 0) {
-      low = mid + 1; // eliminate low half of array
+      low = mid + 1;  // eliminate low half of array
     } else {
-      high = mid; // eliminate high half of array
+      high = mid;  // eliminate high half of array
     }
   }
   // Entire array has been eliminated, key not found.
@@ -91,7 +92,7 @@ typedef struct {
   size_t length;
 } ht;
 
-#define INITIAL_CAPACITY 16 // must not be zero
+#define INITIAL_CAPACITY 16  // must not be zero
 
 ht *ht_create(void) {
   ht *table = malloc(sizeof(ht));
@@ -186,7 +187,7 @@ static bool ht_expand(ht *table) {
   // Allocate new entries array.
   size_t new_capacity = table->capacity * 2;
   if (new_capacity < table->capacity) {
-    return false; // overflow (capacity would be too big)
+    return false;  // overflow (capacity would be too big)
   }
   ht_entry *new_entries = calloc(new_capacity, sizeof(ht_entry));
   if (new_entries == NULL) {
@@ -226,12 +227,12 @@ const char *ht_set(ht *table, const char *key, void *value) {
 size_t ht_length(ht *table) { return table->length; }
 
 typedef struct {
-  const char *key; // current key
-  void *value;     // current value
+  const char *key;  // current key
+  void *value;      // current value
 
   // Don't use these fields directly.
-  ht *_table;    // reference to hash table being iterated
-  size_t _index; // current index into ht._entries
+  ht *_table;     // reference to hash table being iterated
+  size_t _index;  // current index into ht._entries
 } hti;
 
 hti ht_iterator(ht *table) {
@@ -310,20 +311,20 @@ typedef llist Stack;
 #define stack_destroy llist_destroy
 
 void stack_push(Stack *s, void *data) {
-  lval *e = malloc(sizeof(lval));
-  *e = (lval){.data = data, .next = s->head};
+  llval *e = malloc(sizeof(llval));
+  *e = (llval){.data = data, .next = s->head};
   s->head = e;
 }
 
 void stack_pop(Stack *s, void **data) {
-  lval *h = s->head;
+  llval *h = s->head;
   *data = h->data;
   s->head = h->next;
   free(h);
 }
 
 void *stack_peek(Stack *s) {
-  lval *h = s->head;
+  llval *h = s->head;
   return h->data;
 }
 
@@ -334,10 +335,25 @@ void test_stack(void) {
   stack_push(stack, "Bar");
   stack_push(stack, "Baz");
   printf("%s\n", (char *)stack_peek(stack));
-  void **data = malloc(sizeof(void*));
+  void **data = malloc(sizeof(void *));
   stack_pop(stack, data);
   printf("%s\n", (char *)(*data));
   printf("%s\n", (char *)stack_peek(stack));
 }
 
 void ds_test(void) { test_stack(); }
+
+typedef llist llpath;
+
+typedef llist llboard;
+
+static bool check_path(llpath *path) { return true; }
+
+void run_it(void) {
+  llboard *board = malloc(sizeof(board));
+  llist_init(board, NULL);
+  llval *val = malloc(sizeof(llval));
+  val = board->head;
+  while (val != NULL) {
+  }
+}

@@ -3,26 +3,26 @@
 
 #include <stdlib.h>
 
-typedef struct lval {
+typedef struct llval {
   void *data;
-  struct lval *next;
-} lval;
+  struct llval *next;
+} llval;
 
 typedef struct llist {
   int size;
   int (*match)(const void *key1, const void *key2);
   void (*destroy)(void *data);
-  lval *head;
-  lval *tail;
+  llval *head;
+  llval *tail;
 } llist;
 
 void llist_init(llist *list, void (*destroy)(void *data));
 
 void llist_destroy(llist *list);
 
-int llist_ins_next(llist *list, lval *val, const void *data);
+int llist_ins_next(llist *list, llval *val, const void *data);
 
-int llist_rem_next(llist *list, lval *val, void **data);
+int llist_rem_next(llist *list, llval *val, void **data);
 
 #define llist_add(list, data) llist_ins_next(list, NULL, data)
 
