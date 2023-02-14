@@ -1,0 +1,48 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "src/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/sailing_quilt",
+    "file": "/home/bballant/code/c/c-projects/sailing_quilt/src/main.c",
+    "output": "/home/bballant/code/c/c-projects/sailing_quilt/src/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-c",
+      "-o",
+      "src/llist.o",
+      "src/llist.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/sailing_quilt",
+    "file": "/home/bballant/code/c/c-projects/sailing_quilt/src/llist.c",
+    "output": "/home/bballant/code/c/c-projects/sailing_quilt/src/llist.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-c",
+      "-o",
+      "src/test.o",
+      "src/test.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/sailing_quilt",
+    "file": "/home/bballant/code/c/c-projects/sailing_quilt/src/test.c",
+    "output": "/home/bballant/code/c/c-projects/sailing_quilt/src/test.o"
+  }
+]

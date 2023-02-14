@@ -35,8 +35,6 @@ void llist_test_foo(llfixture *llf, gconstpointer ignored) {
   g_assert_cmpstr(head, ==, "bar");
 }
 
-
-
 // Run all tests /////////////////
 int g_test(int argc, char *argv[]) {
   g_test_init(&argc, &argv, NULL);
