@@ -3,6 +3,7 @@
 
 #include "test.h"
 #include "modriclib.h"
+#include "sailing.h"
 
 static void usage(const char *prog) {
   fprintf(stderr,
@@ -23,6 +24,7 @@ int main(int argc, char *argv[]) {
       break;
     } else if (strcmp(argv[i], "-demo") == 0) {
       printf("Run some experimental smack!\n");
+      sailing_demo();
       break;
     } else {
       usage(argv[0]);

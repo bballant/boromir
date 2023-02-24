@@ -4,6 +4,7 @@
 #include "test.h"
 
 #include "llist.h"
+#include "sailing.h"
 
 
 // Testing the Linked List ////////////////////////
@@ -35,10 +36,31 @@ void llist_test_foo(llfixture *llf, gconstpointer ignored) {
   g_assert_cmpstr(head, ==, "bar");
 }
 
+// Testing sailing ////////////////////////
+
+typedef struct {
+  int val;
+} holder;
+
+void sailing_test_setup(int *blah, gconstpointer test_data) {
+  printf("sailing test setup\n");
+  (*blah) = 5;
+}
+
+void sailing_test_teardown(int *blah, gconstpointer test_data) {
+  printf("sailing test teardown\n");
+}
+
+void sailing_test_demo(int *blah, gconstpointer ignored) {
+  g_assert_cmpint(1005, ==, sailing_demo() + *blah);
+}
+
 // Run all tests /////////////////
 int g_test(int argc, char *argv[]) {
   g_test_init(&argc, &argv, NULL);
   g_test_add("/llist/foo", llfixture, NULL, llist_test_setup, llist_test_foo,
              llist_test_teardown);
+  g_test_add("/sailing/demo", int, NULL, sailing_test_setup, sailing_test_demo,
+             sailing_test_teardown);
   return g_test_run();
 }
