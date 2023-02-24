@@ -9,9 +9,9 @@
       "src/main.o",
       "src/main.c"
     ],
-    "directory": "/home/bballant/code/c/c-projects/boromir",
-    "file": "/home/bballant/code/c/c-projects/boromir/src/main.c",
-    "output": "/home/bballant/code/c/c-projects/boromir/src/main.o"
+    "directory": "/home/bballant/code/c/boromir",
+    "file": "/home/bballant/code/c/boromir/src/main.c",
+    "output": "/home/bballant/code/c/boromir/src/main.o"
   },
   {
     "arguments": [
@@ -25,9 +25,9 @@
       "src/tcp.o",
       "src/tcp.c"
     ],
-    "directory": "/home/bballant/code/c/c-projects/boromir",
-    "file": "/home/bballant/code/c/c-projects/boromir/src/tcp.c",
-    "output": "/home/bballant/code/c/c-projects/boromir/src/tcp.o"
+    "directory": "/home/bballant/code/c/boromir",
+    "file": "/home/bballant/code/c/boromir/src/tcp.c",
+    "output": "/home/bballant/code/c/boromir/src/tcp.o"
   },
   {
     "arguments": [
@@ -41,9 +41,9 @@
       "src/ds.o",
       "src/ds.c"
     ],
-    "directory": "/home/bballant/code/c/c-projects/boromir",
-    "file": "/home/bballant/code/c/c-projects/boromir/src/ds.c",
-    "output": "/home/bballant/code/c/c-projects/boromir/src/ds.o"
+    "directory": "/home/bballant/code/c/boromir",
+    "file": "/home/bballant/code/c/boromir/src/ds.c",
+    "output": "/home/bballant/code/c/boromir/src/ds.o"
   },
   {
     "arguments": [
@@ -57,9 +57,9 @@
       "src/llist.o",
       "src/llist.c"
     ],
-    "directory": "/home/bballant/code/c/c-projects/boromir",
-    "file": "/home/bballant/code/c/c-projects/boromir/src/llist.c",
-    "output": "/home/bballant/code/c/c-projects/boromir/src/llist.o"
+    "directory": "/home/bballant/code/c/boromir",
+    "file": "/home/bballant/code/c/boromir/src/llist.c",
+    "output": "/home/bballant/code/c/boromir/src/llist.o"
   },
   {
     "arguments": [
@@ -73,9 +73,9 @@
       "src/hlist.o",
       "src/hlist.c"
     ],
-    "directory": "/home/bballant/code/c/c-projects/boromir",
-    "file": "/home/bballant/code/c/c-projects/boromir/src/hlist.c",
-    "output": "/home/bballant/code/c/c-projects/boromir/src/hlist.o"
+    "directory": "/home/bballant/code/c/boromir",
+    "file": "/home/bballant/code/c/boromir/src/hlist.c",
+    "output": "/home/bballant/code/c/boromir/src/hlist.o"
   },
   {
     "arguments": [
@@ -89,9 +89,9 @@
       "src/test.o",
       "src/test.c"
     ],
-    "directory": "/home/bballant/code/c/c-projects/boromir",
-    "file": "/home/bballant/code/c/c-projects/boromir/src/test.c",
-    "output": "/home/bballant/code/c/c-projects/boromir/src/test.o"
+    "directory": "/home/bballant/code/c/boromir",
+    "file": "/home/bballant/code/c/boromir/src/test.c",
+    "output": "/home/bballant/code/c/boromir/src/test.o"
   },
   {
     "arguments": [
@@ -105,8 +105,8 @@
       "src/bstree.o",
       "src/bstree.c"
     ],
-    "directory": "/home/bballant/code/c/c-projects/boromir",
-    "file": "/home/bballant/code/c/c-projects/boromir/src/bstree.c",
-    "output": "/home/bballant/code/c/c-projects/boromir/src/bstree.o"
+    "directory": "/home/bballant/code/c/boromir",
+    "file": "/home/bballant/code/c/boromir/src/bstree.c",
+    "output": "/home/bballant/code/c/boromir/src/bstree.o"
   }
 ]
