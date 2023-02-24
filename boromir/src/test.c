@@ -6,7 +6,6 @@
 #include "bstree.h"
 #include "llist.h"
 
-
 // Testing the Linked List ////////////////////////
 
 typedef struct {
@@ -36,7 +35,6 @@ void llist_test_foo(llfixture *llf, gconstpointer ignored) {
   g_assert_cmpstr(head, ==, "bar");
 }
 
-
 // Testing the BST ////////////////////////
 
 bool add_data_to_ll(void *acc, void *str) {
@@ -50,14 +48,14 @@ typedef struct {
 
 void bst_test_setup(bstfixture *bstf, gconstpointer test_data) {
   bstree *str_tree = bst_new_bstree((bst_cmp_fn_t *)strcmp, NULL);
-  char input_str[] =
-      "the approach will not be easy you are required "
-      "to maneuver straight down this trench and skim";
+  char input_str[] = "the approach will not be easy you are required "
+                     "to maneuver straight down this trench and skim";
   const char *delim = " ";
   char *token = strtok(input_str, delim);
   while (token) {
     size_t len = strlen(token);
-    if (!bst_insert(str_tree, token, len + 1)) break;
+    if (!bst_insert(str_tree, token, len + 1))
+      break;
     token = strtok(NULL, delim);
   }
   bstf->bst = str_tree;

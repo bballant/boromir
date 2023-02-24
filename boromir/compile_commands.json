@@ -1,0 +1,112 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "src/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/boromir",
+    "file": "/home/bballant/code/c/c-projects/boromir/src/main.c",
+    "output": "/home/bballant/code/c/c-projects/boromir/src/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-c",
+      "-o",
+      "src/tcp.o",
+      "src/tcp.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/boromir",
+    "file": "/home/bballant/code/c/c-projects/boromir/src/tcp.c",
+    "output": "/home/bballant/code/c/c-projects/boromir/src/tcp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-c",
+      "-o",
+      "src/ds.o",
+      "src/ds.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/boromir",
+    "file": "/home/bballant/code/c/c-projects/boromir/src/ds.c",
+    "output": "/home/bballant/code/c/c-projects/boromir/src/ds.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-c",
+      "-o",
+      "src/llist.o",
+      "src/llist.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/boromir",
+    "file": "/home/bballant/code/c/c-projects/boromir/src/llist.c",
+    "output": "/home/bballant/code/c/c-projects/boromir/src/llist.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-c",
+      "-o",
+      "src/hlist.o",
+      "src/hlist.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/boromir",
+    "file": "/home/bballant/code/c/c-projects/boromir/src/hlist.c",
+    "output": "/home/bballant/code/c/c-projects/boromir/src/hlist.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-c",
+      "-o",
+      "src/test.o",
+      "src/test.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/boromir",
+    "file": "/home/bballant/code/c/c-projects/boromir/src/test.c",
+    "output": "/home/bballant/code/c/c-projects/boromir/src/test.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-c",
+      "-o",
+      "src/bstree.o",
+      "src/bstree.c"
+    ],
+    "directory": "/home/bballant/code/c/c-projects/boromir",
+    "file": "/home/bballant/code/c/c-projects/boromir/src/bstree.c",
+    "output": "/home/bballant/code/c/c-projects/boromir/src/bstree.o"
+  }
+]

@@ -62,20 +62,21 @@ const void *bst_search(bstree *bst, const void *key) {
   if (bst == NULL || key == NULL)
     return NULL;
   return _search(bst, bst->root, key); // Start at the root of the
-                                      // tree.
+                                       // tree.
 }
 
 static const void *_search(bstree *bst, const bst_node *node, const void *key) {
-  if (node == NULL) return NULL;  // No subtree to search;
+  if (node == NULL)
+    return NULL; // No subtree to search;
   // no match found.
-  else {  // Compare data:
+  else { // Compare data:
     int cmp_res = bst->cmp(key, bst->get_key(node->data));
-    if (cmp_res == 0)  // Found a match.
+    if (cmp_res == 0) // Found a match.
       return node->data;
     else if (cmp_res < 0)                   // Continue the search
-      return _search(bst, node->left, key);  // in the left subtree,
+      return _search(bst, node->left, key); // in the left subtree,
     else
-      return _search(bst, node->right, key);  // or in the right
+      return _search(bst, node->right, key); // or in the right
     // subtree.
   }
 }
@@ -182,9 +183,11 @@ int bst_inorder_acc(bstree *bst, void *acc,
 static int inorder_acc(bst_node *node, void *acc,
                        bool (*accum)(void *acc, void *data)) {
   int count = 0;
-  if (node == NULL) return 0;
+  if (node == NULL)
+    return 0;
   count = inorder_acc(node->left, acc, accum);
-  if (accum(acc, node->data)) ++count;
+  if (accum(acc, node->data))
+    ++count;
   count += inorder_acc(node->right, acc, accum);
   return count;
 }
