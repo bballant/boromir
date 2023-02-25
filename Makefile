@@ -11,7 +11,8 @@ GLIBC = $(shell pkg-config --cflags glib-2.0)
 default: $(TARGET)
 all: default
 
-OBJECTS = src/main.o src/tcp.o src/ds.o src/llist.o src/hlist.o src/test.o src/bstree.o
+OBJECTS = src/main.o src/tcp.o src/ds.o src/llist.o \
+					src/hlist.o src/test.o src/bstree.o src/htable.o
 
 .PRECIOUS: $(TARGET) $(OBJECTS)
 

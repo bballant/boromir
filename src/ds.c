@@ -342,18 +342,3 @@ void test_stack(void) {
 }
 
 void ds_test(void) { test_stack(); }
-
-typedef llist llpath;
-
-typedef llist llboard;
-
-static bool check_path(llpath *path) { return true; }
-
-void run_it(void) {
-  llboard *board = malloc(sizeof(board));
-  llist_init(board, NULL);
-  llval *val = malloc(sizeof(llval));
-  val = board->head;
-  while (val != NULL) {
-  }
-}

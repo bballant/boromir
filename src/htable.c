@@ -134,17 +134,7 @@ const char *htable_set(htable *table, const char *key, void *value) {
                       &table->length);
 }
 
-size_t ht_length(htable *table) { return table->length; }
-
-typedef struct {
-  const char *key;
-  void *value;
-
-  // Don't use these fields directly.
-  htable *_table;
-  // current index of htable entries
-  size_t _index;
-} htable_iterator;
+size_t htable_length(htable *table) { return table->length; }
 
 htable_iterator htable_iterator_create(htable *table) {
   htable_iterator it;
@@ -167,46 +157,4 @@ bool htable_next(htable_iterator *it) {
     }
   }
   return false;
-}
-
-void test_hash_table(void) {
-  htable *counts = htable_create();
-  if (counts == NULL) {
-    printf("error\n");
-    return;
-  }
-
-  // Read next word from stdin (at most 100 chars long).
-  char word[101];
-  while (scanf("%100s", word) != EOF) {
-    void *value = htable_get(counts, word);
-    if (value != NULL) {
-      int *pcount = (int *)value;
-      (*pcount)++;
-      continue;
-    }
-
-    // Word not found, allocate space for new int and set to 1.
-    int *pcount = malloc(sizeof(int));
-    if (pcount == NULL) {
-      printf("error\n");
-      return;
-    }
-    *pcount = 1;
-    if (htable_set(counts, word, pcount) == NULL) {
-      printf("error\n");
-      return;
-    }
-  }
-
-  // Print out words and frequencies, freeing values as we go.
-  htable_iterator it = htable_iterator_create(counts);
-  while (htable_next(&it)) {
-    printf("%s %d\n", it.key, *(int *)it.value);
-    free(it.value);
-  }
-
-  // Show the number of unique words.
-  printf("%d\n", (int)ht_length(counts));
-  htable_destroy(counts);
 }
