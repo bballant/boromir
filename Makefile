@@ -1,4 +1,4 @@
-TARGET = bin/boromir
+TARGET = bin/gabriel
 
 LIBS = -lm
 GLIBL = $(shell pkg-config --libs glib-2.0)
